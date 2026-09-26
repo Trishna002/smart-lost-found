@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
+import EditItem from './pages/EditItem';
 
-// Pages (we'll create these in Step 7 — placeholders for now)
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -47,6 +47,14 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+  path="/edit-item/:id"
+  element={
+    <ProtectedRoute>
+      <EditItem />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
